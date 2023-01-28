@@ -1,2 +1,11 @@
 # discord-kaggle-bot
-This api push kaggle indormation.
+
+# 環境構築
+パッケージのインストール
+``` 
+pip install -r requirements.txt
+```
+
+# CIについて
+
+
