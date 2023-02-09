@@ -45,11 +45,11 @@ elif command == 'new_competition':
   DISCORD_WEBHOOK_URL_COMPETITION_LIST = os.environ['DISCORD_WEBHOOK_URL_COMPETITION_LIST']
   discord = Discord(url=DISCORD_WEBHOOK_URL_COMPETITION_LIST)
   competitions_list = api.competitions_list()
-  previous_date = datetime.now() - timedelta(days=1)
+  previous_date = datetime.now() - timedelta(days=5)
   current_date = datetime.now()
+  # 本日開催のもののみを送信
   for competition in competitions_list:
-    # 常設コンペは除外
-    if previous_date < competition.enabledDate and competition.enabledDate <= current_date:
+    if not (previous_date < competition.enabledDate and competition.enabledDate <= current_date):
      continue
     send_message = f'\nタイトル：{competition.title if competition.hasTitle else "なし"}'
     send_message += f'\nURL：{competition.ref}'
