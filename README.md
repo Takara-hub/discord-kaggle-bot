@@ -20,9 +20,7 @@ KAGGLE_KEY=<kaggleのAPIキー>
 ``` 
 python3 discord.py コマンド
 ```
-## コマンド一覧
-- competitions_list : kaggleのコンペ情報の一覧を取得
-- new_competition : 本日開催されたコンペ情報を詳しく取得
 
-# CIについて
-Azure functions
+# 本番環境
+[Azure Functions の timerTrigger](TimerTrigger/readme.md) を使用
+
